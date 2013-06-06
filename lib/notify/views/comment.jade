@@ -1,0 +1,11 @@
+
+span Hola
+  strong  #{user.firstName}!
+
+p Un usuario comentó en tu propuesta de DemocraciaEnRed!
+
+div(style="border:1px solid #ccc; padding:10px; text-align:center") #{data.comment.text}
+
+p
+  a(href="http://localhost:3005/proposal/" + data.proposal_id) Hacé click acá para ir a la propuesta!
+

@@ -44,7 +44,8 @@
     "nodemailer": "*",
     "imap": "*",
     "component-builder": "~0.8.2",
-    "string-to-js": "0.0.1"
+    "string-to-js": "0.0.1",
+    "node-schedule": "0.1.8"
   },
   "devDependencies": {},
   "main": "pdr",

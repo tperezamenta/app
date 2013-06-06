@@ -1,0 +1,8 @@
+{
+  "comment": {
+    "email": {
+      "subject": "Hola #{user.firstName}, alguien comentó algo!",
+      "template": "comment.jade"
+    }
+  }
+}

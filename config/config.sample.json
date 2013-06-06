@@ -12,6 +12,8 @@
     }
   },
   "mailer": {
+    "enabled": true,
+    "from": "DemocraciaEnRed <no-reply@democraciaenred.org>",
     "service": "Gmail",
     "auth": {
       "user": "example@gmail.com",

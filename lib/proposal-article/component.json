@@ -1,0 +1,17 @@
+{
+  "name": "proposal-article",
+  "description": "proposal's article view",
+  "dependencies": {
+    "component/domify": "1.0.0",
+    "component/tip": "*",
+    "component/aurora-tip": "*",
+    "visionmedia/jade": "*",
+    "cristiandouce/to-array": "*"
+  },
+  "local": [ ],
+  "scripts": [ "proposal-article.js" ],
+  "templates": [ "article.jade" ],
+  "styles": [ ],
+  "images": [ ],
+  "main": "proposal-article.js"
+}

@@ -1,12 +1,24 @@
 {
   "name": "homepage",
   "description": "Homepage page",
-  "dependencies": {},
+  "dependencies": {
+    "visionmedia/debug": "*",
+    "visionmedia/superagent": "*",
+    "visionmedia/page.js": "*"
+  },
   "development": {},
-  "main": "",
-  "scripts": [],
+  "local": [
+    "citizen",
+    "proposal-list",
+    "proposal-article",
+    "proposal-options",
+    "proposal-comments"
+  ],
+  "scripts": [
+    "homepage.js"
+  ],
   "styles": [
     "main.css"
   ],
-  "main": ""
+  "main": "homepage.js"
 }

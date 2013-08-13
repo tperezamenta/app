@@ -1,15 +1,13 @@
 {
   "name": "PartidoDeLaRed",
   "version": "0.0.1",
-  "description": "Real-time apps made cross-browser & easy with a WebSocket-like API",
-  "homepage": "http://socket.io",
+  "description": "An online space for deliberation and voting on political proposals. The software aims to stimulate better arguments and come to better rulings.",
+  "homepage": "http://democraciaenred.herokuapp.com/",
   "keywords": [
-    "websocket",
-    "socket",
-    "realtime",
-    "socket.io",
-    "comet",
-    "ajax"
+    "democracy",
+    "liquid democracy",
+    "partido de la red",
+    "democracia en red"
   ],
   "author": "Partido De La Red <cristian@partidodelared.org>",
   "contributors": [
@@ -29,23 +27,26 @@
   "dependencies": {
     "express": "*",
     "jade": "*",
-    "nowww": "*",
-    "marked": "*",
-    "ghm": "*",
-    "http-auth": "*",
-    "passport": "*",
-    "passport-local": "*",
-    "passport-local-mongoose": "*",
-    "passport-facebook": "*",
-    "passport-twitter": "*",
-    "connect-mongo": "*",
     "mongoose": "*",
+    "mongoose-voting": "0.1.1",
+    "connect-mongo": "*",
     "debug": "*",
+    "nowww": "*",
+    "component": "~0.16.7",
+    "component-builder": "~0.8.3",
+    "string-to-js": "0.0.1",
+    "passport": "~0.1.17",
+    "passport-local": "~0.1.6",
+    "passport-local-mongoose": "~0.2.4",
+    "passport-facebook": "~0.1.5",
+    "passport-twitter": "~0.1.5",
+    "http-auth": "*",
     "nodemailer": "*",
     "imap": "*",
-    "component-builder": "~0.8.2",
-    "string-to-js": "0.0.1",
-    "node-schedule": "0.1.8"
+    "node-schedule": "0.1.8",
+    "marked": "~0.2.9",
+    "commander": "~2.0.0",
+    "truncate": "*"
   },
   "devDependencies": {},
   "main": "pdr",
@@ -54,6 +55,7 @@
     "npm": "1.1.x"
   },
   "scripts": {
-    "test": ""
+    "test": "",
+    "install": "./node_modules/component/bin/component-install && ./bin/demenred-build"
   }
 }

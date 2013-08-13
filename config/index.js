@@ -8,7 +8,7 @@ var express = require('express')
   , log = require('debug')('app:config')
   , MongoStore = require('connect-mongo')(express)
   , path = require('path')
-  , heroku = require('./heroku')
+  , env = require('./env')
   , utils = require('lib/utils')
   , expressUrl = require('lib/express-url');
 
@@ -57,6 +57,39 @@ function Config(app) {
 
   });
 
+
+  /**
+   * Set `testing` only settings
+   */
+
+  app.configure('testing', function() {
+
+    // Log config settigs load
+    log( 'testing settings' );
+
+    /**
+     * Load custom `config` settings from
+     * file `config.json`
+     */
+
+    app.set( 'config', require('./config.testing.json') );
+
+    /**
+     * Set `mongoUrl` to `mongodb://localhost/pdr-testing`
+     * for MongoDB connection
+     */
+
+    app.set( 'mongoUrl', 'mongodb://localhost/pdr-testing' );
+
+    /**
+     * Build
+     */
+
+    app.use(require('lib/build'));
+
+  });
+
+
   /**
    * Set `production` only settings
    */
@@ -64,7 +97,7 @@ function Config(app) {
   app.configure('production', function() {
 
     // Log config settigs load
-    log( 'development settings' );
+    log( 'production settings' );
 
     /**
      * Set `nowww` middleware helper
@@ -91,7 +124,7 @@ function Config(app) {
       log( 'loading config settings from heroku only' )
     }
 
-    app.set( 'config', utils.merge( heroku, confFile ) );
+    app.set( 'config', utils.merge( env, confFile ) );
     
     /**
      * Set `mongoUrl` setting from environment
@@ -104,7 +137,7 @@ function Config(app) {
      * Set `Basic HTTP-Auth` restriction middleware
      */
     // app.use(express.basicAuth('pepe', 'tortugasninja'));
-    app.use( utils.httpAuth(app) );
+    // app.use( utils.httpAuth(app) );
 
   });
 

@@ -1,7 +1,8 @@
 /* Vars
 -------------------------------------------------- */
 header_height = 60px;
-spacing = 30px;
+spacing = 20px;
+border_radius = 3px;
 nav_proposal_width = 280px;
 
 /* General
@@ -12,12 +13,29 @@ html
 
 h1,h2,h3,h4,h5,h6
 	font-family: "freight-sans-pro",sans-serif;
+	font-weight: bold;
 
 a 
 	color: black;
 
+.btn 
+	background-color: #333;
+	color: white;
+
 img.avatar
 	border-radius: 100%;
+
+.btn-default
+	border: 0;
+
+.btn-group > .btn + .dropdown-toggle
+	padding-left: 13px;
+	padding-right: 13px;
+
+.dropdown-menu
+	border-radius: 0;
+	text-transform: none
+	// box-shadow: none;
 
 /* Header
 -------------------------------------------------- */
@@ -29,7 +47,8 @@ header.app-header
 	left: 0;
 	right: 0;
 	height: header_height;
-	background: #00b3eb;
+	background: #3498DB;
+	border-bottom: 1px solid #2980b9
 	color: white;
 	padding-left: spacing;
 	font-weight: bold;
@@ -44,55 +63,147 @@ header.app-header
 		display: inline-block;
 		width: 300px;
 		font-size: 12px;
+		margin-top: 23px;
 
-	nav 
-		display: inline-block;
-		height: header_height;
-		ul 
-			li 
-				display: inline-block;
-				a 
-					margin-right: 30px;
-
-	ul.user-nav 
+	.user-nav 
 		display: inline-block;
 		float: right;
-		margin-top: 20px;
 		list-style: none;
 		margin-right: spacing;
-		li 
-			display: inline-block;
-			margin-left: 30px;
+
+		.btn 
+			height: 60px;
+			border-radius: 0;
+			border-left: 1px solid #2980b9;
+			border-right: 1px solid #2980b9;
+			background: none;
+			padding: 0;
+			padding: 13px 12px;
+			&:focus
+				outline: 0;
+			.caret 
+				margin-left: 6px;
+
+		.dropdown-menu
+			left: auto;
+			right: 0;
+			a 
+				color: black;
+				text-transform: none
+				font-weight: bold;
+				padding: 10px 20px;
+				display: block;
+				&:hover 
+					background: #2c3e50;
+					color: white;
+
+		&.open
+			.btn 
+				background: rgba(0,0,0,.1);
+			.dropdown-toggle
+				box-shadow: none;
+
+		.profile img 
+			width: 32px;
+			border-radius: 100px;
+
+		.login
+			background: rgba(0,0,0,.4);
+			padding: 6px 12px;
+			display: inline-block
+			border-radius: border_radius;
+			margin-top: 15px;
+
+			&:hover 
+				text-decoration: none
+
 
 /* Proposal Aside Navigation
 -------------------------------------------------- */
+
+.dropdown-deparment
+	padding: spacing;
+	background-color: #BDC3C7;
+	display: block;
+	.btn-group
+		float: none;
+		button.btn.btn-default
+			background-color: #7F8C8D;
+			font-size: 12px;
+			&.dropdown-toggle
+				background-color: #727f80;
+
 aside.nav-proposal 
 	top: header_height;
 	left: 0;
 	bottom: 0;
 	width: nav_proposal_width;
-	border-right: 1px solid #999;
+	border-right: 1px solid #BDC3C7;
 	overflow-y: scroll;
-	li 
-		border-bottom: 1px solid #ccc;
-		a 
-			padding-left: spacing;
-			padding-top: 14px;
-			padding-bottom: 14px;
-			color: black;
-			span.title
-				font-size: 16px;
-				font-weight: bold;
-				display: block;
-				margin-bottom: 10px;
-
-			span.created-by
-				font-size: 11px;
-				opacity: .5;
-
-		&.active 
+	background: #ECF0F1;
+	.navlist
+		li 
+			border-bottom: 1px solid #BDC3C7;
 			a 
-				background: #f9f9f9;
+				padding-left: spacing;
+				padding-top: 14px;
+				padding-bottom: 14px;
+				color: black;	
+				position: relative;
+				padding-left: 70px;
+				color: #666;
+
+				.proposal-type
+					position: absolute;
+					left: spacing;
+					top: spacing;
+					background: #95a5a6;
+					color: white;
+					border-radius: 100px;
+					padding: 10px;
+					line-height: 10px;
+
+				&:hover 
+					.proposal-type
+						background-color: #F1C42E;
+					.proposal-type-2
+						background-color: #E67E22;
+
+				span.title
+					font-size: 15px;
+					font-weight: bold;
+					display: block;
+					margin-bottom: 0px;
+
+				span.created-by
+					font-size: 11px;
+					opacity: .5;
+
+	.navlist
+		li.active 
+			a			
+				.proposal-type
+					background-color: #F1C42E;
+				.proposal-type-2
+					background-color: #E67E22;
+
+			&.active 
+				a 
+					background: #fff;
+					color: black;
+
+
+.proposal-type
+	position: absolute;
+	left: 14px;
+	top: 20px;
+	background: #F1C42E;
+	color: white;
+	border-radius: 100px;
+	padding: 10px;
+	line-height: 10px;
+	&.proposal-type-2
+		background-color: #E67E22;
 
 section.app-content
 	left: nav_proposal_width + 1px;
@@ -106,24 +217,25 @@ section.app-content
 /* Proposal View
 -------------------------------------------------- */
 article.proposal
-	width: 520px;
+	width: 500px;
+	margin-top: 10px;
 	margin-left: 100px;
+	min-height: 300px;
 
 	h2 
+		margin-top: 0;
 		margin-bottom: 20px;
 
-	.meta-data
-		margin-bottom: 20px;
-		font-size: 12px;
-		a.meta-item
-			margin-right: 30px;
-			color: #666;
+	.meta-information
+		margin-bottom: 10px;
+		opacity: .6;
+		.meta-timeago
+			float: right
+			display: block;
 
-			&.meta-tag, &.meta-delegation
-				float: right;
-				margin-left: 20px;
-				margin-right: 0;
-
+	.proposal-type
+		top: 66px;
+		left: 44px;
 	hr 
 		border-top: 4px solid #eee;
 		width: 50%;
@@ -135,43 +247,83 @@ article.proposal
 	.participants
 		font-weight: bold;
 		padding: 10px 0;
-		margin-bottom: 30px;
+		margin: 30px 0;
 		border-top: 2px solid #f1f1f1;
 		border-bottom: 2px solid #f1f1f1;
-		.participant-profile img
-			width: 30px;
+		.participant-profile 
+			margin-left: 10px;
+			img
+				width: 30px;
+				height: 30px;
+			
 
 	.share-links
 		margin-bottom: 40px;
+		a 
+			background: #ccc;
+			padding: 10px;
+			margin-right: 10px;
+			border-radius: border_radius;
+			color: white;
+			display: inline-block
+			line-height: 10px;
+
+			&:hover 
+				text-decoration: none;
+
+			&.facebook:hover
+				background: #3b5998;
+
+			&.twitter:hover
+				background: #3498db;
+
+			&.google-plus:hover
+				background: #c0392b;
+
 
 .proposal-options
-	width: 220px;
+	width: 200px;
 	position: absolute;
-	top: 80px;
+	top: 30px;
 	right: spacing;
+
 	.vote-options
-		margin-bottom: 50px;
 		.vote-option
-			width: 50%;
-			display: inline-block;	
+			display: block;	
 			color: white;
 			text-transform: uppercase;
 			font-weight: bold;
-			text-align: center;
+			border-radius: border_radius;
+			margin-bottom: 20px;
+			padding: 14px;
+			.flaticon
+				display: inline-block
+				margin-right: 14px;
 			span 
-				padding: 20px;
-				display: block;
+				display: inline-block;
 			&.vote-yes
 				background-color: #a4cb53;
 
 			&.vote-no
 				background-color: #d95e59;
+				i
+					transform:rotate(180deg);
+					-ms-transform:rotate(180deg); /* IE 9 */
+					-webkit-transform:rotate(180deg);
+
+			&.vote-abstain
+				background-color: #666;
 				
 	.vote-box, .results-box
-		border-left: 4px solid #eee;
-		padding-left: 20px;
+		border: 1px solid #eee;
+		background: white;
+		padding: 20px;
 		h5 
 			text-transform: uppercase;
+			margin-top: 0;
+
+	.results-box
+		display: none
 
 /* Comments
 -------------------------------------------------- */
@@ -191,19 +343,21 @@ article.proposal
 
 	.comment-form
 		margin-bottom: 50px;
+		margin-top: 50px;
 		textarea
 			width: 500px;
 		
 
 	.comment-list
 		.comment-item
+			margin-bottom: 20px;
+			max-width: 580px;
 			.pull-left
-				width: 50px;
+				width: 46px;
 				margin-right: 20px;
-				a.avatar 
-					width: 24px;
-					display: inline-block;
-					img 
-						width: 100%;
-						border-radius: 100px;
+				.avatar 
+					width: 46px;
+					height: 46px;
+					border-radius: 100px;
+
 

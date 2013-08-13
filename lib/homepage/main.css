@@ -12,12 +12,28 @@ h4,
 h5,
 h6 {
   font-family: "freight-sans-pro", sans-serif;
+  font-weight: bold;
 }
 a {
   color: #000;
 }
+.btn {
+  background-color: #333;
+  color: #fff;
+}
 img.avatar {
   border-radius: 100%;
+}
+.btn-default {
+  border: 0;
+}
+.btn-group > .btn + .dropdown-toggle {
+  padding-left: 13px;
+  padding-right: 13px;
+}
+.dropdown-menu {
+  border-radius: 0;
+  text-transform: none;
 }
 /* Header
 -------------------------------------------------- */
@@ -31,9 +47,10 @@ header.app-header {
   left: 0;
   right: 0;
   height: 60px;
-  background: #00b3eb;
+  background: #3498db;
+  border-bottom: 1px solid #2980b9;
   color: #fff;
-  padding-left: 30px;
+  padding-left: 20px;
   font-weight: bold;
   text-transform: uppercase;
   font-size: 12px;
@@ -46,59 +63,150 @@ header.app-header h1 {
   display: inline-block;
   width: 300px;
   font-size: 12px;
+  margin-top: 23px;
 }
-header.app-header nav {
-  display: inline-block;
-  height: 60px;
-}
-header.app-header nav ul li {
-  display: inline-block;
-}
-header.app-header nav ul li a {
-  margin-right: 30px;
-}
-header.app-header ul.user-nav {
+header.app-header .user-nav {
   display: inline-block;
   float: right;
-  margin-top: 20px;
   list-style: none;
-  margin-right: 30px;
+  margin-right: 20px;
 }
-header.app-header ul.user-nav li {
+header.app-header .user-nav .btn {
+  height: 60px;
+  border-radius: 0;
+  border-left: 1px solid #2980b9;
+  border-right: 1px solid #2980b9;
+  background: none;
+  padding: 0;
+  padding: 13px 12px;
+}
+header.app-header .user-nav .btn:focus {
+  outline: 0;
+}
+header.app-header .user-nav .btn .caret {
+  margin-left: 6px;
+}
+header.app-header .user-nav .dropdown-menu {
+  left: auto;
+  right: 0;
+}
+header.app-header .user-nav .dropdown-menu a {
+  color: #000;
+  text-transform: none;
+  font-weight: bold;
+  padding: 10px 20px;
+  display: block;
+}
+header.app-header .user-nav .dropdown-menu a:hover {
+  background: #2c3e50;
+  color: #fff;
+}
+header.app-header .user-nav.open .btn {
+  background: rgba(0,0,0,0.1);
+}
+header.app-header .user-nav.open .dropdown-toggle {
+  box-shadow: none;
+}
+header.app-header .user-nav .profile img {
+  width: 32px;
+  border-radius: 100px;
+}
+header.app-header .user-nav .login {
+  background: rgba(0,0,0,0.4);
+  padding: 6px 12px;
   display: inline-block;
-  margin-left: 30px;
+  border-radius: 3px;
+  margin-top: 15px;
+}
+header.app-header .user-nav .login:hover {
+  text-decoration: none;
 }
 /* Proposal Aside Navigation
 -------------------------------------------------- */
+.dropdown-deparment {
+  padding: 20px;
+  background-color: #bdc3c7;
+  display: block;
+}
+.dropdown-deparment .btn-group {
+  float: none;
+}
+.dropdown-deparment .btn-group button.btn.btn-default {
+  background-color: #7f8c8d;
+  font-size: 12px;
+}
+.dropdown-deparment .btn-group button.btn.btn-default.dropdown-toggle {
+  background-color: #727f80;
+}
 aside.nav-proposal {
   top: 60px;
   left: 0;
   bottom: 0;
   width: 280px;
-  border-right: 1px solid #999;
+  border-right: 1px solid #bdc3c7;
   overflow-y: scroll;
+  background: #ecf0f1;
 }
-aside.nav-proposal li {
-  border-bottom: 1px solid #ccc;
+aside.nav-proposal .navlist li {
+  border-bottom: 1px solid #bdc3c7;
 }
-aside.nav-proposal li a {
-  padding-left: 30px;
+aside.nav-proposal .navlist li a {
+  padding-left: 20px;
   padding-top: 14px;
   padding-bottom: 14px;
   color: #000;
+  position: relative;
+  padding-left: 70px;
+  color: #666;
 }
-aside.nav-proposal li a span.title {
-  font-size: 16px;
+aside.nav-proposal .navlist li a .proposal-type {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  background: #95a5a6;
+  color: #fff;
+  border-radius: 100px;
+  padding: 10px;
+  line-height: 10px;
+}
+aside.nav-proposal .navlist li a:hover .proposal-type {
+  background-color: #f1c42e;
+}
+aside.nav-proposal .navlist li a:hover .proposal-type-2 {
+  background-color: #e67e22;
+}
+aside.nav-proposal .navlist li a span.title {
+  font-size: 15px;
   font-weight: bold;
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
 }
-aside.nav-proposal li a span.created-by {
+aside.nav-proposal .navlist li a span.created-by {
   font-size: 11px;
   opacity: 0.5;
 }
-aside.nav-proposal li.active a {
-  background: #f9f9f9;
+aside.nav-proposal .navlist li.active a .proposal-type {
+  background-color: #f1c42e;
+}
+aside.nav-proposal .navlist li.active a .proposal-type-2 {
+  background-color: #e67e22;
+}
+aside.nav-proposal .navlist li.active.active a {
+  background: #fff;
+  color: #000;
+}
+.proposal-type {
+  position: absolute;
+  left: 14px;
+  top: 20px;
+  background: #f1c42e;
+  color: #fff;
+  border-radius: 100px;
+  padding: 10px;
+  line-height: 10px;
+}
+.proposal-type.proposal-type-2 {
+  background-color: #e67e22;
 }
 section.app-content {
   left: 281px;
@@ -111,25 +219,26 @@ section.app-content {
 /* Proposal View
 -------------------------------------------------- */
 article.proposal {
-  width: 520px;
+  width: 500px;
+  margin-top: 10px;
   margin-left: 100px;
+  min-height: 300px;
 }
 article.proposal h2 {
+  margin-top: 0;
   margin-bottom: 20px;
 }
-article.proposal .meta-data {
-  margin-bottom: 20px;
-  font-size: 12px;
+article.proposal .meta-information {
+  margin-bottom: 10px;
+  opacity: 0.6;
 }
-article.proposal .meta-data a.meta-item {
-  margin-right: 30px;
-  color: #666;
-}
-article.proposal .meta-data a.meta-item.meta-tag,
-article.proposal .meta-data a.meta-item.meta-delegation {
+article.proposal .meta-information .meta-timeago {
   float: right;
-  margin-left: 20px;
-  margin-right: 0;
+  display: block;
+}
+article.proposal .proposal-type {
+  top: 66px;
+  left: 44px;
 }
 article.proposal hr {
   border-top: 4px solid #eee;
@@ -142,36 +251,62 @@ article.proposal .footer-notes {
 article.proposal .participants {
   font-weight: bold;
   padding: 10px 0;
-  margin-bottom: 30px;
+  margin: 30px 0;
   border-top: 2px solid #f1f1f1;
   border-bottom: 2px solid #f1f1f1;
 }
+article.proposal .participants .participant-profile {
+  margin-left: 10px;
+}
 article.proposal .participants .participant-profile img {
   width: 30px;
+  height: 30px;
 }
 article.proposal .share-links {
   margin-bottom: 40px;
 }
-.proposal-options {
-  width: 220px;
-  position: absolute;
-  top: 80px;
-  right: 30px;
+article.proposal .share-links a {
+  background: #ccc;
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 3px;
+  color: #fff;
+  display: inline-block;
+  line-height: 10px;
 }
-.proposal-options .vote-options {
-  margin-bottom: 50px;
+article.proposal .share-links a:hover {
+  text-decoration: none;
+}
+article.proposal .share-links a.facebook:hover {
+  background: #3b5998;
+}
+article.proposal .share-links a.twitter:hover {
+  background: #3498db;
+}
+article.proposal .share-links a.google-plus:hover {
+  background: #c0392b;
+}
+.proposal-options {
+  width: 200px;
+  position: absolute;
+  top: 30px;
+  right: 20px;
 }
 .proposal-options .vote-options .vote-option {
-  width: 50%;
-  display: inline-block;
+  display: block;
   color: #fff;
   text-transform: uppercase;
   font-weight: bold;
-  text-align: center;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  padding: 14px;
+}
+.proposal-options .vote-options .vote-option .flaticon {
+  display: inline-block;
+  margin-right: 14px;
 }
 .proposal-options .vote-options .vote-option span {
-  padding: 20px;
-  display: block;
+  display: inline-block;
 }
 .proposal-options .vote-options .vote-option.vote-yes {
   background-color: #a4cb53;
@@ -179,14 +314,28 @@ article.proposal .share-links {
 .proposal-options .vote-options .vote-option.vote-no {
   background-color: #d95e59;
 }
+.proposal-options .vote-options .vote-option.vote-no i {
+  transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+/* IE 9 */
+  -webkit-transform: rotate(180deg);
+}
+.proposal-options .vote-options .vote-option.vote-abstain {
+  background-color: #666;
+}
 .proposal-options .vote-box,
 .proposal-options .results-box {
-  border-left: 4px solid #eee;
-  padding-left: 20px;
+  border: 1px solid #eee;
+  background: #fff;
+  padding: 20px;
 }
 .proposal-options .vote-box h5,
 .proposal-options .results-box h5 {
   text-transform: uppercase;
+  margin-top: 0;
+}
+.proposal-options .results-box {
+  display: none;
 }
 /* Comments
 -------------------------------------------------- */
@@ -206,19 +355,21 @@ article.proposal .share-links {
 }
 .comments .comment-form {
   margin-bottom: 50px;
+  margin-top: 50px;
 }
 .comments .comment-form textarea {
   width: 500px;
 }
+.comments .comment-list .comment-item {
+  margin-bottom: 20px;
+  max-width: 580px;
+}
 .comments .comment-list .comment-item .pull-left {
-  width: 50px;
+  width: 46px;
   margin-right: 20px;
 }
-.comments .comment-list .comment-item .pull-left a.avatar {
-  width: 24px;
-  display: inline-block;
-}
-.comments .comment-list .comment-item .pull-left a.avatar img {
-  width: 100%;
+.comments .comment-list .comment-item .pull-left .avatar {
+  width: 46px;
+  height: 46px;
   border-radius: 100px;
 }

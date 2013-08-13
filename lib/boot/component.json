@@ -2,12 +2,16 @@
   "name": "boot",
   "description": "bootstrap component",
   "dependencies": {
-    "component/dom": "*",
-    "visionmedia/superagent": "*",
     "visionmedia/page.js": "*",
+    "cristiandouce/t": "chained-tokens",
     "cristiandouce/timeago": "*"
   },
-  "local": [ "homepage" ],
+  "local": [
+    "homepage",
+    "proposal",
+    "translations",
+    "flaticons"
+  ],
   "scripts": [ "boot.js" ],
   "styles": [ "boot.css" ],
   "images": [ ],

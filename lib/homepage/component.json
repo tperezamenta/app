@@ -11,9 +11,10 @@
   "local": [
     "citizen",
     "proposal-list",
+    "sidebar-list",
     "proposal-article",
     "proposal-options",
-    "proposal-comments"
+    "comments-view"
   ],
   "scripts": [
     "homepage.js"

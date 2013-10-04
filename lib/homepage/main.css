@@ -38,11 +38,13 @@ img.avatar {
 /* Header
 -------------------------------------------------- */
 header.app-header,
+section.site-content,
 section.app-content,
 aside.nav-proposal {
   position: fixed;
 }
 header.app-header {
+  z-index: 100000;
   top: 0;
   left: 0;
   right: 0;
@@ -121,6 +123,14 @@ header.app-header .user-nav .login {
 header.app-header .user-nav .login:hover {
   text-decoration: none;
 }
+/* Site Content Container
+-------------------------------------------------- */
+section.site-content {
+  top: 60px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
 /* Proposal Aside Navigation
 -------------------------------------------------- */
 .dropdown-deparment {
@@ -130,6 +140,7 @@ header.app-header .user-nav .login:hover {
 }
 .dropdown-deparment .btn-group {
   float: none;
+  width: 100%;
 }
 .dropdown-deparment .btn-group button.btn.btn-default {
   background-color: #7f8c8d;
@@ -137,6 +148,9 @@ header.app-header .user-nav .login:hover {
 }
 .dropdown-deparment .btn-group button.btn.btn-default.dropdown-toggle {
   background-color: #727f80;
+}
+.dropdown-deparment .btn-group button.btn.btn-default.current-department {
+  width: 190px;
 }
 aside.nav-proposal {
   top: 60px;
@@ -334,7 +348,7 @@ article.proposal .share-links a.google-plus:hover {
 .proposal-options .results-box {
   border: 1px solid #eee;
   background: #fff;
-  padding: 20px;
+  padding: 20px 100px;
 }
 .proposal-options .vote-box h5,
 .proposal-options .results-box h5 {
@@ -345,8 +359,11 @@ article.proposal .share-links a.google-plus:hover {
 .proposal-options .results-box .delegation-box {
   display: inline-block;
 }
-.proposal-options .results-box {
-  display: none;
+.proposal-options .vote-box .meta-data {
+  margin-bottom: 20px;
+}
+.proposal-options .toggle-results span {
+  margin-right: 5px;
 }
 /* Comments
 -------------------------------------------------- */

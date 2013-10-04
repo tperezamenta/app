@@ -39,10 +39,11 @@ img.avatar
 
 /* Header
 -------------------------------------------------- */
-header.app-header, section.app-content, aside.nav-proposal
+header.app-header, section.site-content, section.app-content, aside.nav-proposal
 	position: fixed;
 
 header.app-header
+	z-index: 100000;
 	top: 0;
 	left: 0;
 	right: 0;
@@ -117,6 +118,13 @@ header.app-header
 			&:hover 
 				text-decoration: none
 
+/* Site Content Container
+-------------------------------------------------- */
+section.site-content
+	top: header_height;
+	left: 0;
+	right: 0;
+	bottom: 0;
 
 /* Proposal Aside Navigation
 -------------------------------------------------- */
@@ -127,11 +135,14 @@ header.app-header
 	display: block;
 	.btn-group
 		float: none;
+		width: 100%;
 		button.btn.btn-default
 			background-color: #7F8C8D;
 			font-size: 12px;
 			&.dropdown-toggle
 				background-color: #727f80;
+			&.current-department
+				width: 190px;
 
 aside.nav-proposal 
 	top: header_height;
@@ -284,9 +295,7 @@ article.proposal
 .proposal-options
 	top: 30px;
 	right: spacing;
-
 	.vote-options
-
 		.direct-vote, .proxy-vote
 			display: inline-block;
 		.vote-option
@@ -322,16 +331,21 @@ article.proposal
 	.vote-box, .results-box
 		border: 1px solid #eee;
 		background: white;
-		padding: 20px;
+		padding: 20px 100px;
 		h5 
 			text-transform: uppercase;
 			margin-top: 0;
 
 		.delegation-box
 			display: inline-block;
+	.vote-box
+		.meta-data
+			margin-bottom: 20px
+	.toggle-results
+		// margin-left: 100px
+		span
+			margin-right: 5px
 
-	.results-box
-		display: none;
 
 /* Comments
 -------------------------------------------------- */

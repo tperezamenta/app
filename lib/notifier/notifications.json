@@ -1,0 +1,6 @@
+{
+	"law commented": {
+		"subject": "Law was commented!",
+		"template": "law-commented.jade"
+	}
+}

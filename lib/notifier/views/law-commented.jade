@@ -1,7 +1,7 @@
-p #{participant.firstName}:
+p= t("notifier.email-templates.law-commented.hello", { name: participant.firstName })
 
-p Law #{law.mediaTitle} was commented:
+p= t("notifier.email-templates.law-commented.title", { lawTitle: law.mediaTitle })
 
 p=comment.text
 
-p by #{comment.author.fullName}
+p= t("notifier.email-templates.law-commented.by", { author: comment.author.fullName })

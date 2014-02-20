@@ -157,5 +157,9 @@
   "Argument cannot be empty": "El argumento no puede estar vacío",
 
   "To not take part on the citizen's decision": "Para no influenciar la decisión del ciudadano",
-  "To respect parlament methodology": "Para respetar la metodología de la legislatura"
+  "To respect parlament methodology": "Para respetar la metodología de la legislatura",
+
+  "notifier.email-templates.law-commented.hello": "Hola, { name }!",
+  "notifier.email-templates.law-commented.title": "La ley '{ lawTitle }' fue comentada:",
+  "notifier.email-templates.law-commented.by": "- por { author }"
 }

@@ -157,5 +157,9 @@
   "Argument cannot be empty": "Argument cannot be empty",
 
   "To not take part on the citizen's decision": "To not take part on the citizen's decision",
-  "To respect parlament methodology": "To respect parlament methodology"
+  "To respect parlament methodology": "To respect parlament methodology",
+
+  "notifier.email-templates.law-commented.hello": "Hello, { name }!",
+  "notifier.email-templates.law-commented.title": "Law '{ lawTitle }' was commented:",
+  "notifier.email-templates.law-commented.by": "- by { author }"
 }
